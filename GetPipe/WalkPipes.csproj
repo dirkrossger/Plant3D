@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{889D6B17-0F34-450E-9777-3B526F863CB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WalkPipes</RootNamespace>
+    <AssemblyName>WalkPipes</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcCoreMgd">
+      <HintPath>C:\Autodesk\AutoCAD_Plant_3D_2017_SDK_English_Win_64bit_dlm\inc\AcCoreMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <HintPath>C:\Autodesk\AutoCAD_Plant_3D_2017_SDK_English_Win_64bit_dlm\inc\AcDbMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcMgd">
+      <HintPath>C:\Autodesk\AutoCAD_Plant_3D_2017_SDK_English_Win_64bit_dlm\inc\AcMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="PnP3dDataLinkManager">
+      <HintPath>C:\Program Files\Autodesk\Autodesk AutoCAD Plant 3D 2017 Object Enabler\PnP3dDataLinkManager.dll</HintPath>
+    </Reference>
+    <Reference Include="PnP3dObjectsMgd">
+      <HintPath>C:\Autodesk\AutoCAD_Plant_3D_2017_SDK_English_Win_64bit_dlm\inc-x64\PnP3dObjectsMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="PnP3dPartsRepository">
+      <HintPath>C:\Program Files\Autodesk\Autodesk AutoCAD Plant 3D 2017 Object Enabler\PnP3dPartsRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="PnP3dProjectPartsMgd">
+      <HintPath>C:\Autodesk\AutoCAD_Plant_3D_2017_SDK_English_Win_64bit_dlm\inc-x64\PnP3dProjectPartsMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="PnPDataLinks">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2017\PnPDataLinks.dll</HintPath>
+    </Reference>
+    <Reference Include="PnPDataObjects">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD 2017\PnPDataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="PnPProjectManagerMgd">
+      <HintPath>C:\Autodesk\AutoCAD_Plant_3D_2017_SDK_English_Win_64bit_dlm\inc-x64\PnPProjectManagerMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

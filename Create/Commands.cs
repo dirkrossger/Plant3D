@@ -46,7 +46,7 @@ using Autodesk.ProcessPower.DataObjects;
 
 namespace Plant3d_Create_a_Pipe
 {
-    public class Class1
+    public class Commands
     {
         [CommandMethod("NewPipe")]
         public static void NewPipe()
