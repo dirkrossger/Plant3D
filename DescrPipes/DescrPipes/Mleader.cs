@@ -30,12 +30,12 @@ namespace AcadNet
                 leader.ContentType = ContentType.MTextContent;
 
                 MText mText = new MText();
-                mText.SetDatabaseDefaults();
-                //mText.Width = 100;
-                //mText.Height = 50;
+                //mText.SetDatabaseDefaults();
+                mText.Width = 100;
+                mText.Height = 50;
                 mText.SetContentsRtf(contents);
                 
-                mText.Location = new Point3d(flagPosition[0]+1, flagPosition[1] + 1, 0); 
+                mText.Location = new Point3d(flagPosition[0]+500, flagPosition[1] + 500, 0); 
 
                 leader.MText = mText;
 

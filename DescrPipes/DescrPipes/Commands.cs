@@ -7,16 +7,21 @@ using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
+using AcApp = Autodesk.AutoCAD.ApplicationServices.Application;
 #endregion
 
 
 namespace AcadNet
 {
+
     public class Commands
     {
         [CommandMethod("Command1")]
         public void DescLayerLines()
         {
+            var obj = AcApp.AcadApplication;
+            Type type = obj.GetType();
+
             Document doc = Application.DocumentManager.MdiActiveDocument;
             Editor ed = doc.Editor;
 
