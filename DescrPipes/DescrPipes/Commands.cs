@@ -19,11 +19,20 @@ namespace AcadNet
         [CommandMethod("Command1")]
         public void DescLayerLines()
         {
-            var obj = AcApp.AcadApplication;
-            Type type = obj.GetType();
-
             Document doc = Application.DocumentManager.MdiActiveDocument;
             Editor ed = doc.Editor;
+
+            string version = Acversion.FindAutoCAD();
+            if (version != null)
+                if (version.Contains("Plant 3D"))
+                {
+                    ed.WriteMessage("\nFunction Mleader pipes loaded. Type->Command1");
+                }
+                else
+                {
+                    ed.WriteMessage("\nFunction Mleader runs only in Autocad Plant3D");
+                    return;
+                }
 
             List<Datas> list = Select.Pipes();
             if(list != null)
@@ -38,5 +47,36 @@ namespace AcadNet
                 ed.WriteMessage("\nNo Pipes found!");
             }
         }
+    }
+
+    public class AcadNet : IExtensionApplication
+    {
+        public void Initialize()
+
+        {
+            Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
+            Editor ed = doc.Editor;
+
+            string version = Acversion.FindAutoCAD();
+            if (version != null)
+                if (version.Contains("Plant 3D"))
+                {
+                    ed.WriteMessage("\nFunction Mleader pipes loaded. Type->Command1");
+                }
+                else
+                {
+                    ed.WriteMessage("\nFunction Mleader runs only in Autocad Plant3D");
+                }
+        }
+    
+
+
+
+        public void Terminate()
+
+        {
+
+        }
+
     }
 }

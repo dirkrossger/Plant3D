@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acversion.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="Datas.cs" />
     <Compile Include="Mleader.cs" />
